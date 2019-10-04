@@ -1,6 +1,6 @@
 version: '2'
 services:
-    dns:
+    chrony:
         restart: always
         image: axxyhtrx/chrony
         ports:
