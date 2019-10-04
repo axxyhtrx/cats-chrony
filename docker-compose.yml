@@ -2,9 +2,7 @@ version: '2'
 services:
     dns:
         restart: always
-        image: axxyhtrx/ntpd
-        volumes:
-            - ./ntpd.conf:/etc/ntpd.conf
+        image: axxyhtrx/crony
         ports:
             - "123:123/udp"
         cap_add:

@@ -1,6 +1,7 @@
 FROM alpine:latest
-RUN apk add openntpd
-ADD ntpd.conf /etc/ntpd.conf
+
+RUN apk add --no-cache chrony
+COPY ./crony.conf /etc/chrony/chrony.conf
 EXPOSE 123/udp
-ENTRYPOINT ["ntpd"]
-CMD ["-d" ,"-f", "/etc/ntpd.conf", "-s"]
+
+ENTRYPOINT [ "/usr/sbin/chronyd", "-d", "-s"]
