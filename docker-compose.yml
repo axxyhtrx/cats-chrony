@@ -2,7 +2,7 @@ version: '2'
 services:
     dns:
         restart: always
-        image: axxyhtrx/crony
+        image: axxyhtrx/chrony
         ports:
             - "123:123/udp"
         cap_add:
